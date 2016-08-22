@@ -1,0 +1,112 @@
+
+/*
+ * Imagens
+ *
+ */
+
+ // Exemplo de aplicação:
+ // <div class="img max-h-8">
+ //   <img src="nome_da_image.png" height="530" width="800">
+ // </div>
+ // <figure class="max-h-8">
+ //   <img src="nome_da_image.png" height="530" width="800">
+ // </figure>
+
+.img {
+    position: relative;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.img:after {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.img figcaption,
+.img-legend {
+    font-size: 1em;
+    line-height: 1em;
+    text-align: right;
+    padding: 1.10em 0.5em 0;
+    width: 100%;
+    min-height: $basal-leading;
+    background-color: #ffffff;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+.img figcaption a,
+.img-legend a { text-decoration: none; }
+
+.img .img-normal {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+
+// img-align-text
+//
+// A caixa da entidade HTML (DIV ou FIGURE), que envolve a imagem,
+// recebe uma propriedade extra no padding-top,
+// empurando a imagem para o alinhamento visual com o texto das colunas ao lado.
+//
+// Exemplo de aplicação:
+// <figure class="img-align-text max-h-8">
+// <img src="nome_da_image.png" height="530" width="800">
+// </figure>
+
+
+.img-align-text { padding-top: 1.4em; }
+
+
+/*
+ * Quebra de layout no limite da largura máxima de colunas
+ *
+ */
+
+@media all and (max-width: $basal-media-inbound) {
+
+    .img { padding: ($basal-leading / 2) 0; }
+
+    .img figcaption,
+    .img-legend { position: relative; }
+
+    .img-align-text {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .img .img-normal {
+        width: 100%;
+        height: auto;
+    }
+
+
+} /* FIM da quebra de layout */
+
+
+/*
+ * Quebra de layout para Tablet
+ *
+ */
+
+@media all and (max-width: $basal-media-tablet) {
+
+    .img { padding: ($basal-leading / 2) $basal-padding; }
+
+} /* Fim da Quebra de layout para Tablet */
+
+/* FIM Imagens */
+

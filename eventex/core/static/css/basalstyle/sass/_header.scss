@@ -1,0 +1,231 @@
+
+/* Cabeçalho do Site e Navegação */
+
+.header { position: relative; }
+
+.header a { text-decoration: none; }
+
+.site-logo {
+    vertical-align: middle;
+    margin: 15px 0 0;
+    padding: 0;
+}
+
+.site-logo h1,
+ .site-logo h1 a {
+    color: #000;
+    font-size: 30px;
+    line-height: 1.8em;
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 50px;
+    min-height: 1em;
+    overflow: hidden;
+}
+
+.site-logo .site-description {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  max-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Fomulário de Busca no Header do Site */
+
+.header-search {
+  vertical-align: middle;
+  display: block;
+  margin: 6px 0 0 $basal-padding;
+  padding: 0 0 0 $basal-padding;
+  width: 190px;
+  position: relative;
+}
+
+.header-search form {
+  margin: 0;
+  padding: 0;
+}
+
+.header-search label { display: none;}
+
+.header-search input[type="text"] {
+  color: #333;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: inherit;
+  min-height: 27px;
+  padding: 1px 6px;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #C5CDCD;
+  display: block;
+}
+.header-search button[type="submit"] {
+  color: #333;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: block;
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10
+}
+
+/* Header inline */
+
+.header-inline .site-logo {
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.header-inline .nav-inline {
+    margin: 2.2em 0;
+    position: absolute;
+    right: 0;
+}
+
+.header-inline .nav-inline li {
+    margin: 0 0 0 1.4em;
+}
+
+.header-inline .submenu ul li {
+      margin: 0;
+      padding: 0;
+}
+
+
+/*
+ * Quebra de layout no limite da largura máxima de colunas
+ *
+ */
+
+@media all and (max-width: $basal-media-inbound) {
+
+    .header-inline .header-search {
+          position: relative;
+          right: 0;
+          top: 0;
+          display: block;
+          padding-bottom: 20px;
+    }
+
+
+} /* FIM da quebra de layout */
+
+
+/*
+ * Quebra de layout para Tablet
+ *
+ */
+
+@media all and (max-width: $basal-media-tablet) {
+
+    /* Cabeçalho do Site e Navegação */
+
+    .header {
+      position: relative;
+    }
+
+    .site-logo {
+      width: 100%;
+      padding: 0 $basal-padding;
+    }
+
+    .site-logo .site-description {
+      width: 90%;
+      padding-top: 0;
+      padding-bottom: 10px;
+    }
+
+
+    /* Fomulário de Busca */
+
+    .header-search {
+      vertical-align: middle;
+      display: block;
+      margin: 0 10px;
+      padding: 20px 0;
+    }
+
+    .header-search form {
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .header-search button[type="submit"] {
+      color: #333;
+      font-size: 18px;
+      line-height: 27px;
+      padding: 0;
+      width: 40px;
+      height: 30px;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
+      display: block;
+      background: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    /* Header inline */
+
+    .header-inline .nav-inline {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        overflow: hidden;
+        background: #fff;
+        position: absolute;
+        right: $basal-padding;
+        z-index: 9999;
+    }
+
+    .header-inline .nav-inline:hover {
+        position: absolute;
+        height: auto;
+        width: auto;
+        box-shadow: 0 5px 10px #CCC;
+    }
+
+    .header-inline .nav-inline > ul {
+        border: none;
+    }
+
+    .header-inline .nav-inline li {
+        margin: 0;
+        padding-left: 0;
+        border: none;
+    }
+
+    .header-inline .nav-inline li a {
+        padding: 0 2em 0 1em;
+    }
+
+    .header-inline .submenu ul li {
+          margin: 0;
+          padding: 0 0 0 1em;
+    }
+
+    .header-inline .nav-inline:hover .nav-mobile {
+        color: $grey-darkest;
+    }
+
+
+} /* Fim da Quebra de layout para Tablet */
+
+/* FIM Cabeçalho do Site e Navegação */

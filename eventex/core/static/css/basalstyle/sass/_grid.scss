@@ -1,0 +1,399 @@
+﻿
+/* Estruturas de Colunas fixas */
+
+%_basal-desktop {
+    float: left;
+    width: 100%;
+}
+
+@for $i from 1 through $basal-col-number {
+
+    .desktop-#{$i} {
+        max-width: $basal-col-fixed * $i;
+        @extend %_basal-desktop;
+    }
+}
+
+
+/* Colunas usando porcentagem */
+
+%_basal-col {
+    float: left;
+}
+
+@each $i in $basal-col-flex {
+
+    .col-#{$i} {
+        width: $i * 1%;
+        @extend %_basal-col;
+    }
+}
+
+
+.col { overflow: hidden; }
+
+
+/* Anula o float e centraliza o <div> da coluna. */
+
+.container { margin: 0 auto; float: none; }
+
+
+/* Esconde o elemento HTML em diferente modos de apresentação */
+
+.hide,
+.hide-desktop { display: none; }
+.screen-reader-only { position: absolute; visibility: hidden; }
+
+
+/*
+ * Aplica o espaço de entrelinha no Padding ou na Margin da caixa.
+ * Deve ser aplicado em caixas (<div>,<header>,<section>,<articles>)
+ *
+ */
+
+@for $i from 1 through 5 {
+
+    .padding-top-#{$i} {
+        padding-top: $basal-leading * $i;
+    }
+}
+
+@for $i from 1 through 5 {
+
+    .padding-bottom-#{$i} {
+        padding-bottom: $basal-leading * $i;
+    }
+}
+
+@for $i from 1 through 5 {
+
+    .margin-top-#{$i} {
+        margin-top: $basal-leading * $i;
+    }
+}
+
+@for $i from 1 through 5 {
+
+    .margin-bottom-#{$i} {
+        margin-bottom: $basal-leading * $i;
+    }
+}
+
+
+/*
+ * Aplica um espaço de coluna a
+ * esquerda (col-left-[n]) ou a direita (col-right-[n])
+ *
+ */
+
+@for $i from 1 through $basal-col-number - 1 {
+
+    .col-left-#{$i} {
+        margin-left: $basal-col-fixed * $i;
+    }
+}
+
+@for $i from 1 through $basal-col-number - 1 {
+
+    .col-right-#{$i} {
+        margin-right: $basal-col-fixed * $i;
+    }
+}
+
+/*
+ * Aplica o gutter entre as colunas
+ * usando o padding interno da caixa da coluna.
+ *
+ */
+
+.gutter {
+    padding-left: $basal-gutter;
+    padding-right: $basal-gutter;
+}
+
+.gutter-left  { padding-left: $basal-gutter;  }
+
+.gutter-right { padding-right: $basal-gutter; }
+
+
+/*
+ * Altura mínima do elemento HTML.
+ *
+ * Uso: Tem momentos que você precisa de uma altura mínima no elemento HTML.
+ * Esta classe especifica a altura mínima com valor múltiplo da entrelinha,
+ * sem limitar o conteúdo, caso cresça em tamanho e quantidade de elementos.
+ * Ex: Um uso comum: <div class="row min-h-7">
+ *
+ */
+
+@for $i from 1 through 40 {
+
+    .min-h-#{$i} {
+        min-height: $basal-leading * $i;
+    }
+}
+
+/*
+ * Altura máxima do bloco HTML.
+ *
+ * Uso: Aplíca-se para conter a altura da imagem dentro do grid.
+ * Esta classe especifica a altura máxima do bloco HTML com valor múltiplo da entrelinha.
+ * Ela restringe a visualização do conteúdo, como se fosse uma máscara com altura máxima.
+ * Ex: Um uso comum: <figure class="max-h-6"><img></figure>
+ *
+ */
+
+%_basal-max-h {
+    min-height: 1em;
+    overflow: hidden;
+}
+
+@for $i from 1 through 20 {
+
+    .max-h-#{$i} {
+        height: $basal-leading * $i;
+        @extend %_basal-max-h;
+    }
+}
+
+
+/* Quebra de layout no limite da largura máxima de colunas */
+
+@media all and (max-width: $basal-media-inbound) {
+
+    @for $i from 1 through $basal-col-number {
+
+        .desktop-#{$i} {
+            @if $i < $basal-col-number {
+                width: ( 100% / $basal-col-number ) * $i;
+            } @else {
+                width: 96%;
+            }
+        }
+    }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-left-#{$i} {
+            margin-left: ( 100% / $basal-col-number ) * $i;
+        }
+    }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-right-#{$i} {
+            margin-right: ( 100% / $basal-col-number ) * $i;
+        }
+    }
+
+
+    %_basal-max-h-tablet {
+        height: auto;
+        min-height: 1em;
+        overflow: hidden;
+    }
+
+    @for $i from 1 through 20 {
+
+        .max-h-#{$i} {
+            @extend %_basal-max-h-tablet;
+        }
+    }
+
+
+}
+// Fim do primeiro ajuste de layout
+
+
+/* Quebra de layout para Tablet */
+
+@media all and (max-width: $basal-media-tablet) {
+
+    %_basal-desktop-tablet {
+        width: 100%;
+        float: none;
+        max-width: none;
+    }
+
+    @for $i from 1 through $basal-col-number {
+
+        .desktop-#{$i} {
+            @extend %_basal-desktop-tablet;
+        }
+    }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-left-#{$i} {
+            @extend %_basal-col-left-mobile;
+        }
+    }
+
+
+    %_basal-col-right-mobile { margin-right: 0; }
+
+    @for $i from 1 through $basal-col-number - 1 {
+
+        .col-left-#{$i} {
+            @extend %_basal-col-right-mobile;
+        }
+    }
+
+    .tablet-1 { width: 25%; float: left; }
+    .tablet-2 { width: 50%; float: left; }
+    .tablet-3 { width: 75%; float: left; }
+
+    .gutter, .gutter-left, .gutter-right { padding: 0; }
+
+    %_basal-col-left-mobile { margin-left: 0; }
+
+}
+// Fim do segundo ajuste de layout
+
+
+/* Quebra de layout para Mobile */
+
+@media all and (max-width: $basal-media-mobile) {
+
+    .col {
+        overflow: visible;
+        display: block;
+    }
+
+    .hide-desktop { display: block; }
+
+    .hide-mobile  { display: none; }
+
+    %_basal-col-mobile {
+        width: 100%;
+        float: none;
+    }
+
+    .tablet-1,
+    .tablet-2,
+    .tablet-3 { @extend %_basal-col-mobile; }
+
+    @each $i in $basal-col-flex {
+
+        .col-#{$i} {
+            @extend %_basal-col-mobile;
+        }
+    }
+
+    .mobile-2 {
+        width: 50%;
+        float: left;
+    }
+
+    %_basal-padding-top-mobile { padding-top: 1em; }
+
+    %_basal-padding-bottom-mobile { padding-bottom: 1em; }
+
+    %_basal-margin-top-mobile { margin-top: 1em; }
+
+    %_basal-margin-bottom-mobile { margin-bottom: 1em; }
+
+    @for $i from 1 through 5 {
+
+        .padding-top-#{$i} {
+            @extend %_basal-padding-top-mobile;
+        }
+
+        .padding-bottom-#{$i} {
+            @extend %_basal-padding-bottom-mobile;
+        }
+
+        .margin-top-#{$i} {
+            @extend %_basal-margin-top-mobile;
+        }
+
+        .margin-bottom-#{$i} {
+            @extend %_basal-margin-bottom-mobile;
+        }
+    }
+
+}
+// Fim do segundo ajuste de layout
+
+
+/* Quebra de layout para Mobile */
+
+@media all and (max-width: $basal-media-tiny) {
+
+    .mobile-2 {
+        width: 100%;
+        float: none;
+    }
+
+}
+
+
+/* Nicolas Gallagher's micro clearfix */
+
+.row {
+    line-height: 1em; // Adicionado para remover interferência de espaçamneto
+    *zoom: 1;
+}
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+.row:after {
+    clear: both;
+}
+
+
+
+ // Grid de DEBUG de alinhamento
+ //
+ // Uso: Basta aplicar na página/template o <label> abaixo.
+ // Certifique-se que a imagem com o grid esteja disponível.
+ //
+ // <label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick='var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\s)"+c+"(?!\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}'></label>
+ //
+
+
+
+.debug {
+    display: block;
+    position: relative;
+}
+
+.debug:after {
+    content: "";
+    background: url(#{$basal-image-grid}) repeat-y center top !important;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    transition: display 1.5s;
+    background: rgba(255,0,0,0.25);
+}
+
+.btnDebug {
+    color: #666666;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    vertical-align: top;
+    padding: 0 0.25em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+    background-color: #FFF;
+    border-radius: 0 0 6px 6px;
+}
+
+@media (max-width: 800px) {
+
+    .btnDebug { display: none; }
+
+}
+
+// FIM Grid

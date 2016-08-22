@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Eventex - O maior encontro hacker do mundo!</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="Eventex - O maior encontro hacker do mundo!">
+        <meta name="author" content="wttd">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/basalstyle/style.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
+        <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'js/smooth-scroll.js' %}"></script>
+        <script src="{% static 'js/retina-1.1.0.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+
+	</head>
+
+	<body>
+
+        <div class="header-frame header-frame-absolute  row">
+            <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
+
+                <div class="site-logo">
+                    <h1><a href="/" rel="home">Eventex</a></h1>
+                    <p class="site-description screen-reader-only">O maior encontro hacker do mundo!</p>
+                </div>
+
+                <nav class="nav-inline" role="navigation">
+                    <a href="javascript:void(0);" class="nav-mobile"><i class="fa fa-bars"></i></a>
+                    <ul>
+                        <li><a data-scroll href="#overview">Conferência</a></li>
+                        <li><a data-scroll href="#sponsors">Patrocinadores</a></li>
+                        <li><a data-scroll href="#register">Inscrição</a></li>
+                        <li><a data-scroll href="#venue">Local</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+
+      	<!-- TOP -->
+        <section id="top" data-stellar-background-ratio="0.5">
+        	<div class="countdown text-align-center row desktop-12 container">
+            	<h1 class="uppercase">Eventex</h1>
+                <h3>Brasil</h3>
+            </div>
+        </section>
+
+        <!-- OVERVIEW -->
+        <section id="overview">
+        	<div class="overview text-align-center row desktop-12 min-h-15 padding-top-2 container">
+            	<i class="fa fa-5x fa-globe"></i>
+            	<h2>A Conferência</h2>
+                <p class="lead">A maior reunião de hackers do mundo.<br>Reunindo profissionais e entusiastas dos quatro <br>cantos do planeta, o <em>Eventex</em> é o lugar onde você precisa estar.</p>
+            	<p><a class="btn-basic btn-blue" data-scroll href="#register">Garanta a sua vaga!</a></p>
+            </div>
+        </section>
+
+        <!-- SPONSORS -->
+        <section id="sponsors">
+        	<div class="sponsors text-align-center row desktop-12 min-h-28 padding-bottom-2 container">
+
+                <h2>Patrocinadores</h2>
+
+                <h3>Gold</h3>
+                <div class="sponsor-slider min-h-6">
+                    <img class="img-responsive" src="{% static 'img/sponsor-gold-01.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-gold-02.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-gold-03.png' %}" alt="logo">
+
+                </div>
+
+                <h3>Silver</h3>
+                <div class="sponsor-slider min-h-6 margin-bottom-1">
+                	<img class="img-responsive" src="{% static 'img/sponsor-silver-01.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-silver-02.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-silver-03.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-silver-04.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-silver-05.png' %}" alt="logo">
+                    <img class="img-responsive" src="{% static 'img/sponsor-silver-06.png' %}" alt="logo">
+                </div>
+
+                <h3>Seja um patrocinador</h3>
+                <p>Interessado? Descubra as oportunidades e benefícios.</p>
+                <a class="btn-basic btn-blue" href="mailto:contato@eventex.com.br?Subject=Patrocínio">informe-se</a>
+
+            </div>
+        </section>
+
+        <!-- REGISTER -->
+        <section id="register">
+            <div class="register row">
+                <div class="text-align-center row desktop-12 padding-top-2 min-h-14 container">
+                	<h2>Inscrição</h2>
+                	<h3>Inscrições em breve!</h3>
+                    <p>Fique à vontade para entrar em contato com a gente.<br>Teremos prazer em responder quaisquer dúvidas.</p>
+                	<a class="btn-basic btn-blue" href="mailto:contato@eventex.com.br">contato@eventex.com.br</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENUE -->
+        <section id="venue">
+            <div class="row min-h-10">
+
+                <div id="map-canvas"></div>
+                <div class="row desktop-12 container">
+                    <div class="venue row">
+                        <div class="venue-address desktop-4 gutter">
+                            <h2>Bar Samba Caffé</h2>
+                            <p>Melhor que qualquer centro de convenções.</p>
+                            <p class="address">
+                                <i class="fa fa-2x fa-map-marker fa-inverse"></i>
+                                Rua do Ouvidor 23, Centro<br>
+                                Rio de Janeiro, RJ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

@@ -1,0 +1,127 @@
+
+// Variáveis do grid
+
+$basal-grid-x:           15px;
+$basal-grid-y:           30px;
+
+$basal-col-fixed:        95px;
+$basal-col-number:       12;
+$basal-col-flex:         (20, 25, 30, 33, 40, 50, 60, 66, 70, 75);
+
+$basal-padding:          $basal-grid-x;
+$basal-leading:          $basal-grid-y;
+$basal-gutter:           $basal-padding;
+$basal-max-width:        $basal-col-fixed * $basal-col-number;
+
+$basal-media-inbound:    $basal-max-width + floor($basal-col-fixed / 2) ;
+$basal-media-tablet:     900px;
+$basal-media-mobile:     480px;
+$basal-media-tiny:       360px;
+
+
+
+// GridForMe (https://github.com/henriquebastos/gridforme)
+// Os parâmetros para construção da imagem de grid:
+// /i/{colunas}/{largura da coluna}/{leading}/{gutter}/?bg=cor&v=cor&h=cor
+
+
+$basal-image-param:      "#{$basal-col-number}/#{strip-unit($basal-col-fixed)}/#{strip-unit($basal-leading)}/#{strip-unit($basal-gutter)}/";
+$basal-image-grid:       "https://gridforme.herokuapp.com/i/#{$basal-image-param}";
+
+
+// Cores
+
+$grey-lighter:   #F2F5F5;
+$grey-light:     #C5CDCD;
+$grey-base:      #95A5A5;
+$grey-darker:    #7F8C8C;
+$grey-darkest:   #2E3333;
+
+$blue-base:      #3498DB;
+$blue-light:     #93C6E8;
+$blue-darker:    #2980B9;
+
+$green-base:     #1abc9c;
+$green-light:    lighten($green-base, 15%);
+$green-darker:   #16a085;
+
+$orange-base:    #FF9900;
+$orange-light:   lighten($orange-base, 15%);
+$orange-darker:  #F08000;
+
+$red-base:       #E74C3C;
+$red-light:      #FF9B96;
+$red-darker:     #CC3300;
+
+
+// Variáveis de cor
+
+$basal-color-link:              $blue-base;
+$basal-color-link-hover:        $blue-darker;
+$basal-color-link-active:       invert( $basal-color-link );
+$basal-color-link-visited:      darken( $basal-color-link, 10% );
+
+$basal-color-text:              #111100;
+$basal-color-text-highlight:    #DDE6E6;
+
+$basal-color-ruler:             #c5cdcd;
+$basal-color-background:        #ffffff;
+
+
+// Botões - Variáveis de cor
+
+$basal-button-text-color:               #2E3333;
+$basal-button-text-color-hover:         #FFFFFF;
+
+$basal-button-border:                   0;
+
+$basal-button-border-radius:            3px;
+
+$basal-button-background:               #C5CDCD;
+$basal-button-background-hover:         darken($basal-button-background, 10%);
+
+$basal-button-color-text-color:         #FFFFFF;
+
+
+// Formulário - Especificação visual de cores, espessura de borda e fundo.
+
+// Formulário de campo de texto e similares
+
+$basal-form-legend-color:                #191919;
+$basal-form-text-color:                  #191919;
+
+$basal-form-border:                      1px solid #B5B5B5;
+$basal-form-border-hover:                1px solid #999999;
+$basal-form-border-focus:                1px solid #5C5C5C;
+
+$basal-form-border-radius:               3px;
+
+$basal-form-shadow:                      inset 1px 1px 3px #CCCCCC;
+
+$basal-form-background:                  #F5F5F5;
+$basal-form-background-hover:            #ffffff;
+$basal-form-background-focus:            lighten(#2980B9, 50%);
+
+
+// Formulário de dropdown
+
+$basal-form-dropdown-text-color:         #191919;
+
+$basal-form-dropdown-border:             $basal-form-border;
+$basal-form-dropdown-border-hover:       $basal-form-border-hover;
+$basal-form-dropdown-border-focus:       $basal-form-border-focus;
+
+$basal-form-dropdown-radius:             $basal-form-border-radius;
+
+$basal-form-dropdown-shadow:             1px 1px 3px #CCCCCC;
+
+$basal-form-dropdown-background:         $basal-form-background;
+$basal-form-dropdown-background-hover:   $basal-form-background;
+$basal-form-dropdown-background-focus:   $basal-form-background;
+
+
+// Formulário com Erro
+
+$basal-form-error-color:                 #e74c3c;
+$basal-form-error-border:                1px solid $basal-form-error-color;
+$basal-form-error-background:            rgba($basal-form-error-color, 0.1);

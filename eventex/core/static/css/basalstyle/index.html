@@ -1,0 +1,575 @@
+<!doctype html>
+<!-- Define a linguagem de conteúdo para Português do Brasil -->
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BasalStyle - CSS e HTML para prototipação rápida de Sites e Formulários.</title>
+
+    <meta name="author" content="Vinicius Braga">
+
+    <meta name="description" content="Conjunto básico de CSS para prototipação rápida de Sites e Formulários.">
+
+    <!-- Adivinha! JavaScript para fazer os IEs entenderem os novos tags HTML5. -->
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Carrega a folha de estilo BasalStyle -->
+    <link rel="stylesheet" href="style.min.css">
+
+    <!-- Carrega CSS Externos -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,800,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+    <div class="row min-h-4">
+
+        <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
+
+            <div class="site-logo">
+                <h1><a href="#" rel="home">BasalStyle</a></h1>
+                <p class="site-description screen-reader-only">CSS e HTML para prototipação rápida de Sites e Formulários.</p>
+            </div>
+
+            <nav class="nav-inline" role="navigation">
+                <a href="javascript:void(0);" class="nav-mobile"><i class="fa fa-bars"></i></a>
+                <ul>
+                    <li><a href="#Heading">Titulagem</a></li>
+                    <li class="current"><a href="#TextAndImages">Texto e Imagens</a></li>
+                    <li><a href="#Menus">menus</a></li>
+                    <li class="submenu">
+                        <a href="#Form">Formulários</a>
+                        <ul>
+                            <li><a href="#FormInput">Input Text</a></li>
+                            <li><a href="#FormRadio">Radio Buttons</a></li>
+                            <li><a href="#FormPulldown">Pulldown</a></li>
+                            <li><a href="#FormError">Erros</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Buttons">Botões</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <!-- END header -->
+
+    </div>
+
+
+    <hr class="hide">
+
+    <div class="content desktop-12 container">
+
+        <section class="row">
+            <header>
+                <h2 id="Heading">Titulagens</h2>
+            </header>
+
+            <div class="row">
+                <div class="desktop-12">
+                    <h1>Tipografia Moderna e Futurismo/ <span class="brno">Ação e Perspectiva - H1</span></h1>
+                    <h2>Tipografia Moderna e Futurismo/ <span claspanss="brno">Ação e Perspectiva - H2</span></h2>
+                    <h3>Tipografia Moderna e Futurismo/ <span class="brno">Ação e Perspectiva - H3</span></h3>
+                    <h4>Tipografia Moderna e Futurismo/ <span class="brno">Ação e Perspectiva - H4</span></h4>
+                    <h5>Tipografia Moderna e Futurismo/ <span class="brno">Ação e Perspectiva - H5</span></h5>
+                    <h6>Tipografia Moderna e Futurismo/ <span class="brno">Ação e Perspectiva - H6</span></h6>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="row padding-top-1">
+            <header>
+                <h2 id="TextAndImages">Texto e Imagens</h2>
+            </header>
+
+            <div class="row padding-top-1">
+                <h1>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente - H1</h1>
+            </div>
+
+            <div class="row">
+
+                <div class="desktop-7 col-right-1">
+
+                    <p>Na <em>maioria dos casos</em>, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+
+                    <h2>Tipografia Moderna e Futurismo/ <span class="keep">Ação e Perspectiva/ H2</span></h2>
+
+                    <figure class="img max-h-15">
+                        <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                        <figcaption>Imagem abstrata. Original por <a href="#">Vinicius Braga</a></figcaption>
+                    </figure>
+
+                    <p>
+                        Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+
+
+                    <h3>Tipografia Moderna e Futurismo/ Ação e Perspectiva/ H3</h3>
+
+                    <!-- Abaixo, um exemplo de linha e colunas flexíveis sem respeito
+                         ao grid. Cada coluna divide a linha em 50%,
+                         sem se preocupar com o grid -->
+
+                    <div class="row">
+                        <div class="col-50 gutter-right">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                        <div class="col-50 gutter-left">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <h4>Tipografia Moderna e Futurismo/ Ação e Perspectiva/ H4</h4>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <h5>Tipografia Moderna e Futurismo/ Ação e Perspectiva/ H5</h5>
+
+                    <!-- Abaixo, um exemplo de linha e colunas flexíveis sem respeito
+                         ao grid, mas mantendo o layout de colunas na tablet e mobile.
+                         Somente em uma tela menor que 360px, o layout em coluna se desfaz. -->
+
+                    <div class="row">
+                        <div class="col-50 tablet-2 mobile-2 gutter-right">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                        <div class="col-50 tablet-2 mobile-2 gutter-left">
+                            <figure class="img max-h-8">
+                                <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <blockquote>
+                        <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+                    </blockquote>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <ul>
+                        <li>Exemplo de lista;</li>
+                        <li>Exemplo de lista;</li>
+                        <li>Exemplo de lista.</li>
+                    </ul>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <ol>
+                        <li>Exemplo de lista</li>
+                        <li>Exemplo de lista</li>
+                        <li>Exemplo de lista</li>
+                    </ol>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <dl>
+                        <dt>Exemplo de título de definição</dt>
+                        <dd>Exemplo de descrição de definição</dd>
+                        <dt>Exemplo de título de definição</dt>
+                        <dd>Exemplo de descrição de definição</dd>
+                    </dl>
+
+                    <p>Na maioria dos casos, uma composição tipográfica deve ser especialmente legível e visualmente envolvente, sem desconsiderar o contexto em que é lido e os objetivos da sua publicação. Em trabalhos de design gráfico experimental (ou de vanguarda) os objetivos formais extrapolam a funcionalidade do texto, portanto questões como legibilidade, nesses casos, podem acabar sendo relativas.</p>
+
+                    <p><small>Os textos sobre tipografia são da <a href="http://pt.wikipedia.org/wiki/Tipografia">Wikipedia</a>.</small></p>
+
+                </div>
+
+                <div class="desktop-4 gutter-left text-small">
+
+                    <figure class="img max-h-6 img-align-text">
+                        <img src="images/abstrato.png" height="530" width="800" alt="Imagem com figura abstrata.">
+                        <figcaption>Imagem abstrata. Original por <a href="#">Vinicius Braga</a></figcaption>
+                    </figure>
+
+                    <h1>Imagem abstrata</h1>
+
+                    <p>O conhecimento adequado do uso da tipografia é essencial aos designers que trabalham com diagramação, ou seja, na relação de texto e imagem. Logo a tipografia é um dos pilares do design gráfico e uma matéria necessária aos cursos de design. Para o designer que se especializa nessa área, a tipografia costuma se revelar um dos aspectos mais complexos e sofisticados do design gráfico.</p>
+
+                    <p>O conhecimento adequado do uso da tipografia é essencial aos designers que trabalham com diagramação, ou seja, na relação de texto e imagem. Logo a tipografia é um dos pilares do design gráfico e uma matéria necessária aos cursos de design. Para o designer que se especializa nessa área, a tipografia costuma se revelar um dos aspectos mais complexos e sofisticados do design gráfico.</p>
+
+                    <h1>Tipografia Moderna</h1>
+
+
+                    <h2>Tipografia Moderna</h2>
+
+                    <h3>Tipografia Moderna</h3>
+
+                    <h4>Tipografia Moderna</h4>
+
+                    <h5>Tipografia Moderna</h5>
+
+                    <h6>Tipografia Moderna</h6>
+
+                    <p>O conhecimento adequado do uso da tipografia é essencial aos designers que trabalham com diagramação, ou seja, na relação de texto e imagem. Logo a tipografia é um dos pilares do design gráfico e uma matéria necessária aos cursos de design. Para o designer que se especializa nessa área, a tipografia costuma se revelar um dos aspectos mais complexos e sofisticados do design gráfico.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="padding-top-2 min-h-13">
+            <header>
+                <h2 id="Menus">Navegação (Bloco de Links)</h2>
+            </header>
+
+            <h3>Menu Horizontal</h3>
+
+            <div class="row">
+                <div class="desktop-8">
+                    <h4>Menu no Header e com Busca</h4>
+                    <p>Este exemplo é de uso do menu no Header do site e aplicando a Busca como último item do Menu. Também tem um exemplo de item do menu selecionado e seu sub-item.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
+
+                    <div class="site-logo desktop-3">
+                        <h1><a href="#" rel="home">Nome do Site</a></h1>
+                        <p class="site-description">Uma descrição do site com poucas palavras</p>
+                    </div>
+
+                    <nav class="nav-inline" role="navigation">
+                        <a href="javascript:void(0);" class="nav-mobile"><i class="fa fa-bars"></i></a>
+                        <ul>
+                            <li><a href="#Heading">Titulagem</a></li>
+                            <li class="current"><a href="#TextAndImages">Texto e Imagens</a></li>
+                            <li><a href="#Menus">menus</a></li>
+                            <li class="submenu">
+                                <a href="#Form">Formulários</a>
+                                <ul>
+                                    <li><a href="#FormInput">Input Text</a></li>
+                                    <li><a href="#FormRadio">Radio Buttons</a></li>
+                                    <li><a href="#FormPulldown">Pulldown</a></li>
+                                    <li><a href="#FormError">Erros</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#Buttons">Botões</a></li>
+                            <li>
+                                <div class="header-search">
+                                    <form id="search-form" method="get" action="#" role="search">
+                                        <label for="search">Busca</label>
+                                        <input type="text" id="search" name="s" value="" required="required" placeholder="Busca">
+                                        <button type="submit" id="search-submit"><i class="fa fa-search"></i> Buscar</button>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </header>
+            </div>
+
+            <h4>Menu horizontal de uso normal</h4>
+
+            <div class="row min-h-5">
+                <div class="desktop-8">
+                    <div class="nav-inline" role="navigation">
+                        <ul>
+                            <li class="current"><a href="#Heading">Titulagem</a></li>
+                            <li><a href="#TextAndImages">Texto e Imagens</a></li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);">Formulários <i class="fa fa-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="#FormInput">Input Text</a></li>
+                                    <li><a href="#FormRadio">Radio Buttons</a></li>
+                                    <li><a href="#FormPulldown">Pulldown</a></li>
+                                    <li><a href="#FormError">Erros</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#Buttons">Botões</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- row -->
+        </section>
+
+        <section class="min-h-34">
+            <header>
+                <h2 id="Form">Formulários</h2>
+            </header>
+            <h3 id="FormInput">Campos de Texto</h3>
+
+            <div class="row">
+                <div class="col-50">
+                    <form action="/">
+
+                        <div class="form-row label-block input-text">
+                            <label for="id-01">Nome</label>
+                            <input type="text" id="id-01" name="name" value="">
+                        </div>
+
+                        <div class="form-row label-block input-text input-text-66">
+                            <label for="id-02">Cidade</label>
+                            <input type="text" id="id-02" name="city">
+                        </div>
+
+                        <div class="form-row label-block input-text input-text-33">
+                            <label for="id-03">CEP</label>
+                            <input type="text" id="id-03" name="zipcode">
+                        </div>
+
+                        <div class="form-row label-block input-text">
+                            <fieldset>
+                                <legend>Telefone</legend>
+                                <div class="row">
+                                    <div class="col-20 gutter-right">
+                                        <input type="tel" id="id-22" name="phone_0">
+                                        <label for="id-22">DDI</label>
+                                    </div>
+                                    <div class="col-30 gutter-right">
+                                        <input type="tel" id="id-23" name="phone_1">
+                                        <label for="id-23">DDD</label>
+                                    </div>
+                                    <div class="col-50">
+                                        <input type="tel" id="id-24" name="phone_2">
+                                        <label for="id-24">Telefone</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div id="FormRadio" class="row min-h-7">
+                            <div class="col-50">
+                                <div class="form-row input-radio form-label-desc">
+                                    <fieldset>
+                                        <legend>Estado Civil</legend>
+                                        <ul>
+                                            <li><input id="id-04" type="radio" name="estado_civil" value="overnight" /><label for="id-04">Solteiro</label></li>
+                                            <li><input id="id-05" type="radio" name="estado_civil" value="overnight" /><label for="id-05">Casado</label></li>
+                                            <li><input id="id-06" type="radio" name="estado_civil" value="overnight" /><label for="id-06">Separado</label></li>
+                                            <li><input id="id-07" type="radio" name="estado_civil" value="overnight" /><label for="id-07">Divorciado</label></li>
+                                            <li><input id="id-08" type="radio" name="estado_civil" value="overnight" /><label for="id-08">Viúvo</label></li>
+                                        </ul>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="form-row input-radio form-label-desc">
+                                    <fieldset>
+                                        <legend>Opções com Checkbox</legend>
+                                        <ul>
+                                            <li><input id="id-09" type="checkbox" name="estado_civil" value="overnight" /><label for="id-09">Opção 1</label></li>
+                                            <li><input id="id-10" type="checkbox" name="estado_civil" value="overnight" /><label for="id-10">Opção 2</label></li>
+                                        </ul>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="FormPulldown" class="form-row label-block select-dropdown">
+                            <label for="id-11">Estado (UF)</label>
+                            <select id="id-11" name="state">
+                                <option value="">Escolha uma opção</option>
+                                <option value="UF_AC">Acre</option>
+                                <option value="UF_RN">Rio Grande do Norte</option>
+                                <option value="UF_RJ">Rio de Janeiro</option>
+                                <option value="UF_PA">Pará</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row label-block input-text min-h-6">
+                            <label>Observações</label> <textarea name=""></textarea>
+                        </div>
+
+                        <div class="min-h-3">
+                            <p class="btn-row "><button type="submit" class="btn-basic btn-icon-right">Entrar <i class="fa fa-chevron-right"></i></button>  ou <a href="#">Cancelar</a></p>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section>
+            <header>
+                <h2 id="FormError">Erros no Formulário</h2>
+            </header>
+
+            <form action="/" class="min-h-35">
+                <h3>Erro abaixo do campo</h3>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-12_01">Nome Completo</label>
+                    <input type="text" id="id-12_01" name="full_name" value="">
+                    <ul class="errorlist">
+                        <li>Este campo é obrigatório.</li>
+                    </ul>
+                </div>
+
+                <h3>Erro entre o label e o campo</h3>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-12">Email</label>
+                    <ul class="errorlist">
+                        <li>Este campo é obrigatório.</li>
+                        <li>Um exemplo de uma segunda ou mais linhas de erro no mesmo campo.</li>
+                    </ul>
+                    <input type="text" id="id-12" name="name" value="">
+                </div>
+
+                <h3>Erros com múltiplos campos de texto organizados num Fieldset</h3>
+
+                <div class="form-row label-block input-text error-input">
+                    <fieldset>
+                        <legend>Telefone</legend>
+                        <ul class="errorlist">
+                            <li>Este campo é obrigatório.</li>
+                            <li>Um exemplo de uma segunda ou mais linhas de erro no mesmo campo.</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-20 gutter-right">
+                                <input type="tel" id="id-22" name="phone_0">
+                                <label for="id-22">DDI</label>
+                            </div>
+                            <div class="col-30 gutter-right">
+                                <input type="tel" id="id-23" name="phone_1">
+                                <label for="id-23">DDD</label>
+                            </div>
+                            <div class="col-50">
+                                <input type="tel" id="id-24" name="phone_2">
+                                <label for="id-24">Telefone</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <h3>Erros com Fieldset e Radios</h3>
+
+                <div class="form-row input-radio form-label-desc error-input">
+                    <fieldset>
+                        <legend>Estado Civil</legend>
+                        <ul class="errorlist">
+                            <li>É preciso escolher uma opção abaixo.</li>
+                        </ul>
+                        <ul>
+                            <li><input id="id-13" type="radio" name="estado_civil" value="01" /><label for="id-13">Solteiro</label></li>
+                            <li><input id="id-14" type="radio" name="estado_civil" value="02" /><label for="id-14">Casado</label></li>
+                            <li><input id="id-15" type="radio" name="estado_civil" value="03" /><label for="id-15">Separado</label></li>
+                            <li><input id="id-16" type="radio" name="estado_civil" value="04" /><label for="id-16">Divorciado</label></li>
+                            <li><input id="id-17" type="radio" name="estado_civil" value="05" /><label for="id-17">Viúvo</label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </form>
+
+        </section>
+
+        <section>
+
+            <h3>Erros agregados no topo do formulário</h3>
+
+            <form action="/" accept-charset="utf-8" class="min-h-16">
+
+                <div class="errorlist">
+                    <p>O fomulário contêm erros nos campos, são eles:</p>
+                    <dl>
+                        <dt>Nome Completo</dt>
+                        <dd>Este campo é obrigatório.</dd>
+                        <dt>Email</dt>
+                        <dd>Este campo é obrigatório.</dd>
+                        <dd>Um exemplo de uma segunda ou mais linhas de erro no mesmo campo.</dd>
+                    </dl>
+                </div>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-18">Nome Completo</label>
+                    <input type="text" id="id-18" name="name">
+                </div>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-19">Email</label>
+                    <input type="email" id="id-19" name="email">
+                </div>
+
+                <div class="form-row label-block input-text error-input">
+                    <label for="id-20">Senha</label>
+                    <input type="password" id="id-20" name="pass">
+                </div>
+            </form>
+
+
+        </section>
+
+        <section>
+            <h2 id="Buttons">Botões</h2>
+
+
+            <div class="min-h-17">
+                <p>Botões com etiqueta simples de âncora.</p>
+
+                <p class="btn-row"><a href="" class="btn-basic">btn-basic</a></p>
+
+                <p class="btn-row">
+                    <a href="" class="btn-basic btn-green">btn-green</a>
+                    <a href="" class="btn-basic btn-blue">btn-blue</a>
+                    <a href="" class="btn-basic btn-orange">btn-orange</a>
+                    <a href="" class="btn-basic btn-red btn-icon-right">btn-red <i class="fa fa-chevron-right"></i></a>
+                </p>
+
+                <p>Classes específicas para compensar visualmente a posição de ícones nos botões.</p>
+                <p class="btn-row">
+                    <a href="" class="btn-basic btn-icon-left"><i class="fa fa-chevron-left"></i> Página Anterior</a>
+                    <a href="" class="btn-basic btn-icon-right">Próxima Página <i class="fa fa-chevron-right"></i></a>
+                </p>
+                <p>Exemplos com etiqueta de &lt;submit&gt; e &lt;button&gt;.</p>
+                <form action="#" method="get" accept-charset="utf-8">
+                    <p class="btn-row">
+                        <input type="submit" value="Enviar">  ou <a href="#">Cancelar</a>
+                    </p>
+                    <p class="btn-row">
+                        <button type="submit" class="btn-basic btn-icon-right">Entrar <i class="fa fa-chevron-right"></i></button>
+                    </p>
+                </form>
+
+            </div>
+        </section>
+
+
+    </div>
+    <!-- END content -->
+
+    <hr class="hide">
+
+    <div class="ruler-top">
+        <footer class="footer desktop-12 container">
+            <div class="padding-top-1">
+                <p>basalStyle</p>
+                <p>CSS e HTML para prototipação rápida de Sites, WebApps e Formulários.</p>
+            </div>
+        </footer>
+        <!-- END footer -->
+    </div>
+
+    <label class="btnDebug" for="debug"> Grid <input type="checkbox" id="debug" onclick='var e=document.getElementsByTagName("body")[0],c="debug",re=new RegExp("(?:^|\\s)"+c+"(?!\\S)","g");if(e.className.match(re)){e.className=e.className.replace(re,"");}else{e.className+=" "+c;this.checked=true;}'></label>
+
+</body>
+</html>
