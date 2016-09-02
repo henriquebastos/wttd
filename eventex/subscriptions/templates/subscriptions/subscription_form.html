@@ -20,6 +20,23 @@
 
         <link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
 
+        <style>
+            .alert{
+                padding: 0 15px;
+                margin-bottom: 1rem;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+            }
+            .alert p {
+                padding: 7px 0 7px;
+            }
+            .alert.success{
+                color: #3c763d;
+                background-color: #dff0d8;
+                border-color: #d0e9c6;
+            }
+        </style>
+
 	</head>
 
 	<body>
@@ -50,6 +67,13 @@
         	<div class="content row padding-bottom-3 desktop-12 container">
                 <h1>Formulário de Inscrição</h1>
                 <div class="desktop-6">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert success">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     <form action="." method="post">
                         {% csrf_token %}
                         <div class="form-row label-block input-text">
