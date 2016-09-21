@@ -38,7 +38,7 @@
             <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
 
                 <div class="site-logo">
-                    <h1><a href="/" rel="home">Eventex</a></h1>
+                    <h1><a href="{% url 'home' %}" rel="home">Eventex</a></h1>
                     <p class="site-description screen-reader-only">O maior encontro hacker do mundo!</p>
                 </div>
 
@@ -111,7 +111,7 @@
                 	<h2>Inscrição</h2>
                 	<h3>Inscrições abertas!</h3>
                     <p>Fique à vontade para entrar em contato com a gente.<br>Teremos prazer em responder quaisquer dúvidas.</p>
-                	<a class="btn-basic btn-blue" href="/inscricao/">Inscrevase já!</a>
+                	<a class="btn-basic btn-blue" href="{% url 'subscriptions:new' %}">Inscrevase já!</a>
                 </div>
             </div>
         </section>
