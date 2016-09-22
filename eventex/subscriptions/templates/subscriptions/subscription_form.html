@@ -6,15 +6,9 @@
     <div class="content row padding-bottom-3 desktop-12 container">
         <h1>Formulário de Inscrição</h1>
         <div class="desktop-6">
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert success">
-                        <p>{{ message }}</p>
-                    </div>
-                {% endfor %}
-            {% endif %}
             <form action="." novalidate method="post">
                 {% csrf_token %}
+                {{ form.non_field_errors }}
                 <div class="form-row label-block input-text">
                     <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
                     {{ form.name.errors }}
