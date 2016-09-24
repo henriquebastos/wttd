@@ -45,10 +45,11 @@ class SubscriptionsNewPostValid(TestCase):
     def setUp(self):
         data = dict(name='Ramiro Alvaro', cpf='12345678901', email='ramiroalvaro.ra@gmail.com', phone='31-991387178')
         self.resp = self.client.post(r('subscriptions:new'), data)
+        self.id = Subscription.objects.first().id
 
     def test_post(self):
-        """Valid POST should redirect to /inscricao/1/"""
-        self.assertRedirects(self.resp, r('subscriptions:detail', 1))
+        """Valid POST should redirect to /inscricao/id/"""
+        self.assertRedirects(self.resp, r('subscriptions:detail', self.id))
 
     def test_send_subscribe_email(self):
         self.assertEqual(1, len(mail.outbox))
