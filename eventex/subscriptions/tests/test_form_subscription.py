@@ -42,6 +42,13 @@ class SubscriptionFormTest(TestCase):
         form = self.make_validated_form(email='', phone='')
         self.assertListEqual(['__all__'], list(form.errors))
 
+    def test_regression_invalid_email_and_not_phone(self):
+        data = dict(name='Ramiro Alvaro', cpf='12345678901', email='ramiroalvaro.ra@gmail.com', phone='31-991387178')
+        data['email'] = 'asdf'
+        del data['phone']
+        form = SubscriptionForm(data)
+        self.assertEqual(False, form.is_valid())
+
     def assertFormErrorCode(self, form, field, code):
         errors = form.errors.as_data()
         errors_list = errors[field]
