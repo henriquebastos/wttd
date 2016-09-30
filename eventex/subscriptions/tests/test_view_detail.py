@@ -1,3 +1,5 @@
+from time import time
+
 from django.test import TestCase
 from django.shortcuts import resolve_url as r
 from eventex.subscriptions.models import Subscription
@@ -5,6 +7,7 @@ from eventex.subscriptions.models import Subscription
 
 class SubscriptionDetailGet(TestCase):
     def setUp(self):
+        self.startTime = time()
         self.obj = Subscription.objects.create(
             name='Ramiro Alvaro',
             cpf='12345678901',
@@ -12,6 +15,10 @@ class SubscriptionDetailGet(TestCase):
             phone='31-991387178'
         )
         self.resp = self.client.get(r('subscriptions:detail', self.obj.pk))
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_get(self):
         self.assertEqual(200, self.resp.status_code)
@@ -31,6 +38,13 @@ class SubscriptionDetailGet(TestCase):
 
 
 class SubscriptionDetailNotFound(TestCase):
+    def setUp(self):
+        self.startTime = time()
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
+
     def test_not_found(self):
         resp = self.client.get(r('subscriptions:detail', '00000000-0000-0000-0000-000000000000'))
         self.assertEqual(404, resp.status_code)

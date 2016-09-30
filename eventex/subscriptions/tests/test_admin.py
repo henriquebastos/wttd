@@ -1,3 +1,4 @@
+from time import time
 from unittest.mock import Mock
 
 from django.test import TestCase
@@ -6,9 +7,14 @@ from eventex.subscriptions.admin import SubscriptionModelAdmin, Subscription, ad
 
 class SubscriptionModelAdminTest(TestCase):
     def setUp(self):
+        self.startTime = time()
         Subscription.objects.create(name='Ramiro Alvaro', cpf='12345678901', email='ramiroalvaro.ra@gmail.com',
                                     phone='31-991387178')
         self.model_admin = SubscriptionModelAdmin(Subscription, admin.site)
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_has_action(self):
         """Action mark_as_paid should be installed"""

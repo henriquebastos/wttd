@@ -1,9 +1,17 @@
-from django.test import TestCase
+from time import time
 
+from django.test import TestCase
 from eventex.subscriptions.forms import SubscriptionForm
 
 
 class SubscriptionFormTest(TestCase):
+    def setUp(self):
+        self.startTime = time()
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
+
     def test_form_has_fields(self):
         """Form must have 4 fields"""
         form = SubscriptionForm()

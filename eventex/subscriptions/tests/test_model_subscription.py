@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import time
 
 from django.test import TestCase
 from eventex.subscriptions.models import Subscription
@@ -6,6 +7,7 @@ from eventex.subscriptions.models import Subscription
 
 class SubscriptionModelTest(TestCase):
     def setUp(self):
+        self.startTime = time()
         self.obj = Subscription(
             name='Ramiro Alvaro',
             cpf='12345678901',
@@ -13,6 +15,10 @@ class SubscriptionModelTest(TestCase):
             phone='31-991387178'
         )
         self.obj.save()
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_create(self):
         self.assertTrue(Subscription.objects.exists())

@@ -1,4 +1,5 @@
 # import unittest
+from time import time
 
 from django.core import mail
 from django.test import TestCase
@@ -9,7 +10,12 @@ from eventex.subscriptions.models import Subscription
 
 class SubscriptionsNewGet(TestCase):
     def setUp(self):
+        self.startTime = time()
         self.resp = self.client.get(r('subscriptions:new'))
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_get(self):
         """Get /inscricao/ must return status code 200"""
@@ -43,9 +49,14 @@ class SubscriptionsNewGet(TestCase):
 
 class SubscriptionsNewPostValid(TestCase):
     def setUp(self):
+        self.startTime = time()
         data = dict(name='Ramiro Alvaro', cpf='12345678901', email='ramiroalvaro.ra@gmail.com', phone='31-991387178')
         self.resp = self.client.post(r('subscriptions:new'), data)
         self.id = Subscription.objects.first().id
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_post(self):
         """Valid POST should redirect to /inscricao/id/"""
@@ -60,7 +71,12 @@ class SubscriptionsNewPostValid(TestCase):
 
 class SubscriptionsNewPostInvalid(TestCase):
     def setUp(self):
+        self.startTime = time()
         self.resp = self.client.post(r('subscriptions:new'), {})
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_post(self):
         """Invalid POST should not redirect"""
@@ -82,6 +98,13 @@ class SubscriptionsNewPostInvalid(TestCase):
 
 
 class TemplateRegressionTest(TestCase):
+    def setUp(self):
+        self.startTime = time()
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
+
     def test_template_has_non_field_errors(self):
         invalid_data = dict(name='Ramiro Alvaro', cpf='12345678901')
         response = self.client.post(r('subscriptions:new'), invalid_data)

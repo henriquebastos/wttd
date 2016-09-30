@@ -1,13 +1,21 @@
+from time import time
+
 from django.core import mail
-from django.test import TestCase
+
 from django.shortcuts import resolve_url as r
+from django.test import TestCase
 
 
 class SubscribePostValid(TestCase):
     def setUp(self):
+        self.startTime = time()
         data = dict(name='Ramiro Alvaro', cpf='12345678901', email='ramiroalvaro.ra@gmail.com', phone='31-991387178')
         self.client.post(r('subscriptions:new'), data)
         self.email = mail.outbox[0]
+
+    def tearDown(self):
+        delta = time() - self.startTime
+        print("{:.3f}".format(delta))
 
     def test_subscription_email_subject(self):
         expect = 'Confirmação de inscrição'
